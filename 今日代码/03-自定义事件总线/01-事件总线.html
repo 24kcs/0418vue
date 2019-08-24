@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+
+</head>
+
+<body>
+  <script src="./event-bus.js"></script>
+  <script type="text/javascript">
+    // 绑定事件
+    EventBus.on('add', function (data) {
+      console.log('add事件1' + '=====' + data)
+    })
+    EventBus.on('add', function (data) {
+      console.log('add事件2' + '=====' + data)
+    })
+    EventBus.on('delete', function (data) {
+      console.log('delete事件' + '=====' + data)
+    })
+    // 解绑事件
+    EventBus.off('delete')
+
+    // 事件分发,并传入数据
+    EventBus.emit('add','第一个')
+    EventBus.emit('delete','第一个')
+
+  </script>
+</body>
+
+</html>
