@@ -1,0 +1,55 @@
+@import "./reset.css";
+@media only screen and (-webkit-device-pixel-ratio: 2) {
+  .border-1px::before {
+    transform: scaleY(0.5);
+  }
+}
+@media only screen and (-webkit-device-pixel-ratio: 3) {
+  .border-1px::before {
+    transform: scaleY(0.333333);
+  }
+}
+::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.app {
+  width: 100%;
+  height: 100%;
+}
+.app .footer {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+}
+.app .footer::before {
+  content: '';
+  position: absolute;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+}
+.app .footer .footerItem {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.app .footer .footerItem .iconfont {
+  font-size: 20px;
+}
+.app .footer .footerItem .itemText {
+  margin-top: 3px;
+}
+.app .footer .footerItem.active {
+  color: #02a774;
+}
